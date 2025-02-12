@@ -4,6 +4,8 @@ import requests
 import pytz
 import yaml
 from tools.final_answer import FinalAnswerTool
+from tools.visit_webpage import VisitWebpageTool
+from tools.web_search import DuckDuckGoSearchTool
 
 from Gradio_UI import GradioUI
 
@@ -61,7 +63,7 @@ with open("first_agent/prompts.yaml", 'r') as stream:
     
 agent = CodeAgent(
     model=model,
-    tools=[get_current_time_in_timezone, check_daytime_or_nighttime_from_current_time, DuckDuckGoSearchTool(), image_generation_tool, final_answer], ## add your tools here (don't remove final answer)
+    tools=[get_current_time_in_timezone, check_daytime_or_nighttime_from_current_time, DuckDuckGoSearchTool(), VisitWebpageTool(), image_generation_tool, final_answer], ## add your tools here (don't remove final answer)
     max_steps=6,
     verbosity_level=1,
     grammar=None,
