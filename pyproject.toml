@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "hugginface-agent"
+version = "0.1.0"
+description = "hugginface-agent"
+authors = ["andrei-gorbatch <gorbatch.andrei@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.12"
+python-dotenv = "^1.0.0"
+markdownify = "^0.14.1"
+smolagents = "^1.8.1"
+requests = "^2.32.3"
+duckduckgo-search = "^7.3.2"
+pandas = "^2.2.3"
+gradio = "^5.16.0"
+
+[tool.poetry.group.dev.dependencies]
+jupyter_black = "*"
+ipykernel = "*"
+jupyter = "*"
+matplotlib = "^3.6.2"
+
+[tool.poetry.group.test.dependencies]
+pytest = "*"
+black = "*"
+isort = "*"
+import-linter = "*"
+
+[tool.isort]
+profile = "black"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
